@@ -1,0 +1,52 @@
+body {
+    /*sets font family, no margin to fit correctly*/
+    font-family: 'PT Sans Narrow', sans-serif;
+    margin: 0px;
+    background-color: #202135FF;
+    word-spacing: -1px;
+}
+
+#mainSite {
+    /* creates side bars for desktop/laptop resolutions*/
+    max-width: 1150px;
+    margin: 0 auto;
+    background-color: #191919;
+    color:  #DEDEDE;
+} 
+header {
+	h1{
+		text-align: center;
+        font-size: 3.2em;
+		padding: 2%;
+        margin: 0;
+	}
+}
+
+ nav {
+    
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 1.5em;
+}
+
+li a:hover {
+  background-color: #191919;
+}
+}
