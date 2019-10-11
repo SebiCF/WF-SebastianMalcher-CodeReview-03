@@ -2,28 +2,31 @@ body {
   /*sets font family, no margin to fit correctly*/
   font-family: 'PT Sans Narrow', sans-serif;
   margin: 0px;
-  background-color: #202135FF;
+  background-color: #191919;
   word-spacing: -1px; }
 
 #mainSite {
-  /* creates side bars for desktop/laptop resolutions*/
-  max-width: 1150px;
+  /* creates side bars*/
+  max-width: 1000px;
   margin: 0 auto;
-  background-color: #191919;
+  background-color: #202135FF;
   color: #DEDEDE; }
 
-header h1 {
-  text-align: center;
-  font-size: 3.2em;
-  padding: 2%;
-  margin: 0; }
+/* header settings*/
+header {
+  background-color: #0d0d0d; }
+  header h1 {
+    text-align: center;
+    font-size: 3.2em;
+    padding: 3%;
+    margin: 0; }
 
 nav ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #333; }
+  background-color: #333333; }
 nav li {
   float: left; }
 nav li a {
@@ -35,5 +38,40 @@ nav li a {
   font-size: 1.5em; }
 nav li a:hover {
   background-color: #191919; }
+
+main #contentHeader {
+  position: relative;
+  text-align: center; }
+main h2 {
+  padding: 1%;
+  margin: 0;
+  display: inline-block;
+  font-size: 200%; }
+main span {
+  position: absolute;
+  right: 5%;
+  top: 30%;
+  font-size: 125%; }
+main .flex {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap; }
+  main .flex div {
+    padding: 2%;
+    margin-bottom: 6%;
+    width: 40%;
+    background-color: #0d0d0d; }
+    main .flex div img {
+      width: 50%;
+      float: left;
+      margin: 1%;
+      margin-right: 5%; }
+    main .flex div div {
+      width: 100%;
+      padding: 1%;
+      margin-top: -1%;
+      font-size: 110%; }
+      main .flex div div h3 {
+        margin: 1%; }
 
 /*# sourceMappingURL=index_style.css.map */
