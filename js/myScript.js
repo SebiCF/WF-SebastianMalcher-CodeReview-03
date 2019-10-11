@@ -116,12 +116,16 @@ function createMovies(){
 		let movieFlexChildren = document.createElement("div");
 		let movieImg = document.createElement("img");
 		let obj = movies[i];
-		movieImg.src = obj.image; 
-		let description = document.createElement("div")
-		description.innerHTML = `<h3>${obj.name}</h3>Year: ${obj.productionYear} <br><br> Synopsis:<br>  ${obj.description}`;
+		movieImg.src = obj.image;
+		let likeBtnDiv = document.createElement("div");
+		likeBtnDiv.id = "likediv";
+		likeBtnDiv.innerHTML = `Like <img src="./img/thumbsup.png" id="likebutton">`;
+		let description = document.createElement("div");
+		description.innerHTML = `<h3>${obj.name}</h3>Year: ${obj.productionYear} <br><br> Synopsis:<br>  ${obj.description} `;
 		movieFlexBox.appendChild(movieFlexChildren);
 		movieFlexChildren.appendChild(movieImg);
 		movieFlexChildren.appendChild(description);
+		movieFlexChildren.appendChild(likeBtnDiv);
 
 	}
 }

@@ -7,7 +7,7 @@ body {
 
 #mainSite {
   /* creates side bars*/
-  max-width: 1000px;
+  max-width: 1100px;
   margin: 0 auto;
   background-color: #202135FF;
   color: #DEDEDE; }
@@ -60,18 +60,39 @@ main .flex {
     padding: 2%;
     margin-bottom: 6%;
     width: 40%;
-    background-color: #0d0d0d; }
+    background-color: #0d0d0d;
+    line-height: 120%;
+    position: relative; }
     main .flex div img {
-      width: 50%;
+      width: 53%;
       float: left;
       margin: 1%;
-      margin-right: 5%; }
+      margin-right: 5%;
+      border-radius: 3%; }
+    main .flex div #likebutton {
+      width: 13%;
+      margin: 0% 0% -1% 2%; }
+    main .flex div #likediv {
+      position: absolute;
+      bottom: 8%;
+      right: 2%;
+      margin: 0;
+      padding: 0;
+      font-size: 140%;
+      line-height: 100%;
+      color: green;
+      letter-spacing: 1px; }
     main .flex div div {
-      width: 100%;
+      width: 39%;
       padding: 1%;
       margin-top: -1%;
-      font-size: 110%; }
+      font-size: 110%;
+      margin-bottom: 0;
+      float: right; }
       main .flex div div h3 {
         margin: 1%; }
+      main .flex div div img {
+        width: 7%;
+        float: none; }
 
 /*# sourceMappingURL=index_style.css.map */

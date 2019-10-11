@@ -8,15 +8,17 @@ body {
 
 #mainSite {
     /* creates side bars*/
-    max-width: 1000px;
+    max-width: 1100px;
     margin: 0 auto;
     background-color: #202135FF;
     color: #DEDEDE;
 }
- /* header settings*/
+
+/* header settings*/
 header {
 
-   background-color: #0d0d0d;
+    background-color: #0d0d0d;
+
     h1 {
         text-align: center;
         font-size: 3.2em;
@@ -56,55 +58,85 @@ nav {
 
 main {
 
-  #contentHeader{
-    position: relative;
-    text-align: center;
-  }
-  h2 {
-    padding: 1%;
-    margin: 0;
-    display: inline-block;
-    font-size: 200%;
-
-  }
-  span {
-    position: absolute;
-    right: 5%;
-    top: 30%;
-    font-size: 125%;
-  }
-
-  .flex {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-
-    div {
-      padding: 2%;
-      margin-bottom: 6%;
-      width: 40%;
-      background-color: #0d0d0d;
-
-
-      img {
-        width: 50%;
-        float: left;
-        margin: 1%;
-        margin-right: 5%;
-        
-      }
-
-      div {
-        width: 100%;
-        padding: 1%;
-        margin-top: -1%;
-        font-size: 110%;
-
-        h3{
-          margin:1%;
-        }
-
-      }
+    #contentHeader {
+        position: relative;
+        text-align: center;
     }
-  }
+
+    h2 {
+        padding: 1%;
+        margin: 0;
+        display: inline-block;
+        font-size: 200%;
+
+    }
+
+    span {
+        position: absolute;
+        right: 5%;
+        top: 30%;
+        font-size: 125%;
+    }
+
+    .flex {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+
+        div {
+            padding: 2%;
+            margin-bottom: 6%;
+            width: 40%;
+            background-color: #0d0d0d;
+            line-height: 120%;
+            position: relative;
+
+
+
+            img {
+                width: 53%;
+                float: left;
+                margin: 1%;
+                margin-right: 5%;
+                border-radius: 3%;
+            }
+
+            #likebutton {
+                width: 13%;
+                margin: 0% 0% -1% 2%;
+            }
+
+            #likediv {
+                position: absolute;
+                bottom: 8%;
+                right: 2%;
+                margin: 0;
+                padding: 0;
+                font-size: 140%;
+                line-height: 100%;
+                color: green;
+                letter-spacing: 1px;
+            }
+
+            div {
+                width: 39%;
+                padding: 1%;
+                margin-top: -1%;
+                font-size: 110%;
+                margin-bottom: 0;
+                float: right;
+
+                h3 {
+                    margin: 1%;
+                }
+
+
+                img {
+                    width: 7%;
+                    float: none;
+                }
+
+            }
+        }
+    }
 }
