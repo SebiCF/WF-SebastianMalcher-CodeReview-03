@@ -6,6 +6,7 @@ createMain();
 createMovieFlexBox();
 createMovies(movies);
 increaseCounterOnClick(movies);
+createFooter();
 }
 
 initPage();
@@ -30,7 +31,7 @@ function createHeader() {
     ul.appendChild(li1);
     ul.appendChild(li2);
     document.getElementById("reloadDefaultMovies").addEventListener("click", function(){
-    	createMovies(movies);
+    	sortMoviesByName(movies);
     });
 
 
@@ -41,11 +42,11 @@ function createMain() {
     let main = document.createElement('main');
     let contentHeader = document.createElement("div");
     contentHeader.id = "contentHeader"
-    contentHeader.innerHTML = `<h2>Movies</h2><span id="sortBtn">▲▼  Sort</span>`;
+    contentHeader.innerHTML = `<h2>Movies</h2><span id="sortBtnAsc">▲</span><span>Sort</span><span id="sortBtnDesc">▼</span>`;
 	 document.getElementById("mainSite").appendChild(main);
     main.appendChild(contentHeader);
-    document.getElementById("sortBtn").addEventListener("click", sortMoviesByLikes);
-
+    document.getElementById("sortBtnDesc").addEventListener("click", sortMoviesByLikesDesc);
+		document.getElementById("sortBtnAsc").addEventListener("click", sortMoviesByLikesAsc);
 }
 
 function createMovieFlexBox() {
@@ -94,7 +95,7 @@ function increaseCounterOnClick(movies) {
 }
 
 
-function sortMoviesByLikes() {
+function sortMoviesByLikesDesc() {
     
     let moviesByLikes = movies.slice(0);
     moviesByLikes.sort(function(a, b) {
@@ -104,5 +105,44 @@ function sortMoviesByLikes() {
 	createMovies(moviesByLikes);
     increaseCounterOnClick(moviesByLikes);
 }
+function sortMoviesByLikesAsc() {
+    
+    let moviesByLikes = movies.slice(0);
+    moviesByLikes.sort(function(a, b) {
+        return a.likeCount - b.likeCount;
+    });
+    document.querySelector(".flex").innerHTML = " ";
+	createMovies(moviesByLikes);
+    increaseCounterOnClick(moviesByLikes);
+}
+function sortMoviesByName() {
+    
+let moviesByName = movies.slice(0);
+
+moviesByName.sort(function(a, b){
+ var nameA=a.name.toLowerCase(), nameB=b.name.toLowerCase();
+ if (nameA < nameB) //sort string ascending
+  return -1;
+ if (nameA > nameB)
+  return 1;
+ return 0; //default return value (no sorting)
+});
 
 
+    
+    
+    console.log(moviesByName)
+    document.querySelector(".flex").innerHTML = " ";
+	createMovies(moviesByName);
+    increaseCounterOnClick(moviesByName);
+}
+
+
+function createFooter(){
+	let footer = document.createElement("footer");
+    footer.id = "footer";
+    document.getElementById("mainSite").appendChild(footer);
+    let footerHeading = document.createElement("h1");
+    footerHeading.innerHTML = "MovieFactory";
+    footer.appendChild(footerHeading);
+}
