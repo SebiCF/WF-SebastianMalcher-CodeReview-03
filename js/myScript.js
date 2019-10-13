@@ -3,7 +3,7 @@ for (i = 0; i < movies.length; i++){/* randomize likeCount of each movie on site
     movies[i].likeCount = randomLikes;
 }
 
-let movieCounter = 10;
+let movieCounter = 10; /* sets current page number*10 */
 
 function initPage() {
     createHeader();

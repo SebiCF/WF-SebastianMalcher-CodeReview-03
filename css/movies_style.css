@@ -279,7 +279,7 @@ main div[class^=moreMoviesBtnsDiv] {
   display: flex;
   justify-content: center;
   color: black;
-  padding: 1%;
+  padding: 0% 2% 2% 1%;
   font-size: 150%;
   font-weight: bold; }
   main div[class^=moreMoviesBtnsDiv] div[class^=nextMoviePageBtn] {
