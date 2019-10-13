@@ -58,12 +58,16 @@ function createMain() {
 
 function createMovieFlexBox() {
 
+	let moreMoviesBtnsDivTop = document.createElement("div"); /* creates div for nextMovePage buttons*/
+    moreMoviesBtnsDivTop.className = "moreMoviesBtnsDivTop";
+    document.querySelector("main").appendChild(moreMoviesBtnsDivTop);
+
     let movieFlexBox = document.createElement("div");
     movieFlexBox.className = "flex";
     document.querySelector("main").appendChild(movieFlexBox);
     
     let moreMoviesBtnsDiv = document.createElement("div"); /* creates div for nextMovePage buttons*/
-    moreMoviesBtnsDiv.id = "moreMoviesBtnsDiv";
+    moreMoviesBtnsDiv.className = "moreMoviesBtnsDiv";
     document.querySelector("main").appendChild(moreMoviesBtnsDiv);
 }
 
@@ -93,25 +97,9 @@ function createMovies(movies, movieCounter) {
     }
 
 
+    createNextMoviePageBtns(movies);
 
-
-    if (document.getElementById("moreMoviesBtnsDiv").innerHTML == ""){ /* only creates buttons when there are none*/
     
-   
-   let x = movies.length%(Math.floor((movies.length)/10));/* checks how many nextMoviePageBtns need to be created*/
-   let numberOfNextPageBtns = Math.floor((movies.length)/10);
-   if (x > 0){
-   	numberOfNextPageBtns++;
-   }
-    for (i=0; i < numberOfNextPageBtns; i++){ /* creates nextMoviePageButton*/
-    	let nextMoviePageBtn = document.createElement("div");
-    	nextMoviePageBtn.className = "nextMoviePageBtn"+i;
-    	nextMoviePageBtn.innerHTML = i+1;
-    	;
-    	moreMoviesBtnsDiv.appendChild(nextMoviePageBtn);
-    	document.querySelector("[class^=nextMoviePageBtn]")
-    }
-}
 
 
     
@@ -124,8 +112,13 @@ function createMovies(movies, movieCounter) {
     }
     else{
     	resetNextMoviePageBtnColor();
-    	document.querySelector("[class^=nextMoviePageBtn]").style.color = "#5591ff";
-    	document.querySelector("[class^=nextMoviePageBtn]").style.textDecorationColor  = "#5591ff";
+    	let bothBtns = document.querySelectorAll("[class=nextMoviePageBtn0]");
+    	bothBtns.forEach(function(elem){
+    		elem.style.color = "#5591ff";
+    		elem.style.textDecorationColor  = "#5591ff";
+    	})
+    	
+
     };
 
 	
@@ -137,15 +130,25 @@ function createMovies(movies, movieCounter) {
     					let contentHeader = document.getElementById("contentHeader");
     					contentHeader.id = "contentHeader"
    						contentHeader.innerHTML = `<h2>All Movies</h2><span id="sortBtnAsc">▲</span><span>Sort</span><span id="sortBtnDesc">▼</span>`;
-   						document.querySelector("main").insertBefore(contentHeader, document.querySelector(".flex"));
+   						document.querySelector("main").insertBefore(contentHeader, document.querySelector("[class=moreMoviesBtnsDivTop]"));
 
                 		movieCounter= parseInt(e.target.innerHTML)*10;
                 		
                 		createMovies(movies, movieCounter);
                 		increaseCounterOnClick(movies);
-                		e.target.style.color ="#5591ff";
-                		e.target.style.textDecorationColor ="#5591ff";
+                		
+                		let currentNextMovieBtnBlue = e.target.className;
+                		
+						let bothCurrentBtns = document.querySelectorAll(`[class=${currentNextMovieBtnBlue}]`);
+    					bothCurrentBtns.forEach(function(elem){
+    					elem.style.color = "#5591ff";
+    					elem.style.textDecorationColor  = "#5591ff";
+    					})
+
+
+
                 		scroll(0,0);
+
 
 
 
@@ -157,11 +160,39 @@ function createMovies(movies, movieCounter) {
 
                 })
 
-
-
 })
 
 }
+
+function createNextMoviePageBtns(movies){
+    
+        if (document.querySelector("[class=moreMoviesBtnsDiv]").innerHTML == ""){ /* only creates buttons when there are none*/
+        
+       
+       let x = movies.length%(Math.floor((movies.length)/10));/* checks how many nextMoviePageBtns need to be created*/
+       let numberOfNextPageBtns = Math.floor((movies.length)/10);
+       if (x > 0){
+       	numberOfNextPageBtns++;
+       }
+        for (i=0; i < numberOfNextPageBtns; i++){ /* creates nextMoviePageButton*/
+        	let nextMoviePageBtnTop = document.createElement("div");
+        	nextMoviePageBtnTop.className = "nextMoviePageBtn"+i;
+        	nextMoviePageBtnTop.innerHTML = i+1;
+        	
+        	document.querySelector("[class=moreMoviesBtnsDivTop]").appendChild(nextMoviePageBtnTop);
+        	
+        }
+        for (i=0; i < numberOfNextPageBtns; i++){ /* creates nextMoviePageButton*/
+        	let nextMoviePageBtn = document.createElement("div");
+        	nextMoviePageBtn.className = "nextMoviePageBtn"+i;
+        	nextMoviePageBtn.innerHTML = i+1;
+        	
+        	document.querySelector("[class=moreMoviesBtnsDiv]").appendChild(nextMoviePageBtn);
+        	
+        }
+    }
+}
+
 
 function increaseCounterOnClick(movies) {/* increase likeCounter on thumbsUp click*/
     let allLikeBtns = document.querySelectorAll(".likebutton")
@@ -196,9 +227,12 @@ function sortMoviesByLikesDesc(movieCounter) {
     increaseCounterOnClick(movies);
    
     let currentActivePageNumber = movieCounter/10-1;
-    let currentActivePageButton = document.querySelector(".nextMoviePageBtn"+currentActivePageNumber);
-    currentActivePageButton.style.color = "#5591ff";
-    currentActivePageButton.style.textDecorationColor = "#5591ff";
+    let currentBtnClassName = "nextMoviePageBtn"+ currentActivePageNumber;
+    let bothBtns = document.querySelectorAll(`[class=${currentBtnClassName}]`);
+    	bothBtns.forEach(function(elem){
+    		elem.style.color = "#5591ff";
+    		elem.style.textDecorationColor  = "#5591ff";
+    	})
     
     if (movieCounter < 11){
     	resetNextMoviePageBtnColor();/* if 1st page is active, reset all colors and give 1st nextMovePageBtn blue color*/
@@ -207,6 +241,8 @@ function sortMoviesByLikesDesc(movieCounter) {
     };
 
 }
+
+
 function sortMoviesByLikesAsc(movieCounter) {
 
     movies.sort(function(a, b) {
@@ -218,9 +254,12 @@ function sortMoviesByLikesAsc(movieCounter) {
     increaseCounterOnClick(movies);
 
     let currentActivePageNumber = movieCounter/10-1;
-    let currentActivePageButton = document.querySelector(".nextMoviePageBtn"+currentActivePageNumber);
-    currentActivePageButton.style.color = "#5591ff";
-    currentActivePageButton.style.textDecorationColor = "#5591ff";
+    let currentBtnClassName = "nextMoviePageBtn"+ currentActivePageNumber;
+    let bothBtns = document.querySelectorAll(`[class=${currentBtnClassName}]`);
+    	bothBtns.forEach(function(elem){
+    		elem.style.color = "#5591ff";
+    		elem.style.textDecorationColor  = "#5591ff";
+    	})
     
    if (movieCounter < 11){
     	resetNextMoviePageBtnColor();/* if 1st page is active, reset all colors and give 1st nextMovePageBtn blue color*/
@@ -228,6 +267,7 @@ function sortMoviesByLikesAsc(movieCounter) {
     	document.querySelector("[class^=nextMoviePageBtn]").style.textDecorationColor  = "#5591ff";
     };
 }
+
 
 function sortMoviesByName() {
 	
@@ -402,6 +442,7 @@ function resetNextMoviePageBtnColor(){
 
 		        })
  }
+    
     
 
 

@@ -49,6 +49,7 @@ main #contentHeader {
 main h2 {
   padding: 2%;
   margin: 0;
+  margin-bottom: -2%;
   display: inline-block;
   font-size: 280%;
   color: black; }
@@ -87,7 +88,8 @@ main #homeFlex div:hover > div[id^=movieTitel] {
 main #homeFlex div[id^=movieTitel]:hover {
   transform: skew(-10deg); }
 main #homeFlex div {
-  width: 24%; }
+  width: 24%;
+  margin-top: 2%; }
   main #homeFlex div div[class^=likeDiv] {
     width: 31%;
     top: 10%;
@@ -273,17 +275,17 @@ main #featuredHeader {
     display: inline-block;
     font-size: 310%;
     font-style: italic; }
-main #moreMoviesBtnsDiv {
+main div[class^=moreMoviesBtnsDiv] {
   display: flex;
   justify-content: center;
   color: black;
   padding: 1%;
   font-size: 150%;
   font-weight: bold; }
-  main #moreMoviesBtnsDiv div[class^=nextMoviePageBtn] {
+  main div[class^=moreMoviesBtnsDiv] div[class^=nextMoviePageBtn] {
     margin: 0% 0% 0% 1%;
     text-decoration: underline; }
-  main #moreMoviesBtnsDiv div[class^=nextMoviePageBtn]:hover {
+  main div[class^=moreMoviesBtnsDiv] div[class^=nextMoviePageBtn]:hover {
     cursor: pointer;
     opacity: 0.5; }
 
