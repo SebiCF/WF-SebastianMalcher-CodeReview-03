@@ -52,6 +52,11 @@ function createHeader() {
     ul.appendChild(searchInput);
     searchInput.type = "text";
     searchInput.id = "searchInput";
+    searchInput.value = "Search by name, genre, ...";
+    searchInput.addEventListener('click', function(e) {
+        e.target.value = " ";
+    });
+
     searchInput.addEventListener('keypress', function(e) {
         var key = e.which || e.keyCode;
         if (key === 13) {
@@ -467,6 +472,12 @@ function search(movies, movieCounter) {
             let currentMovieObj = movies[i];
             moviesSortedBySearch.push(currentMovieObj);
         }
+    }
+
+    if (moviesSortedBySearch.length == 0){
+            alert("No search entries found");
+            return;
+
     }
 
     createMovieFlexBox();
