@@ -54,7 +54,7 @@ function createHeader() {
     searchInput.id = "searchInput";
     searchInput.value = "Search by name, genre, ...";
     searchInput.addEventListener('click', function(e) {
-        e.target.value = " ";
+        e.target.select();
     });
 
     searchInput.addEventListener('keypress', function(e) {
