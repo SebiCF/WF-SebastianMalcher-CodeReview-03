@@ -86,7 +86,7 @@ let movies =
 
             "productionYear": "2001",
 
-            "image": "./img/lordoftherings.jpg",
+            "image": "./img/lordoftherings1.jpg",
 
             "description": "A meek Hobbit from the Shire and eight companions set out on a journey to destroy the powerful One Ring and save Middle-earth from the Dark Lord Sauron.",
 
@@ -135,6 +135,511 @@ let movies =
             "likeCount": "42"
 
 
-        }
+        },
+        {
 
+            "name": "Joker",
+
+            "productionYear": "2019",
+
+            "image": "./img/joker1.jpg",
+
+            "description": "In Gotham City, mentally-troubled comedian Arthur Fleck is disregarded and mistreated by society. He then embarks on a downward spiral of revolution and bloody crime. This path brings him face-to-face with his alter-ego: 'The Joker'.",
+
+            "likeCount": "46"
+
+
+        },
+        {
+
+            "name": "The Prestige",
+
+            "productionYear": "2006",
+
+            "image": "./img/theprestige.jpg",
+
+            "description": "After a tragic accident, two stage magicians engage in a battle to create the ultimate illusion while sacrificing everything they have to outwit each other.",
+
+            "likeCount": "28"
+
+
+        },
+        {
+
+            "name": "Once Upon a Time in the West",
+
+            "productionYear": "1968",
+
+            "image": "./img/OnceUponaTimeintheWest.jpg",
+
+            "description": "A mysterious stranger with a harmonica joins forces with a notorious desperado to protect a beautiful widow from a ruthless assassin working for the railroad.",
+
+            "likeCount": "30"
+
+
+        },
+        {
+
+            "name": "Psycho",
+
+            "productionYear": "1960",
+
+            "image": "./img/psycho.jpg",
+
+            "description": "A Phoenix secretary embezzles forty thousand dollars from her employer's client, goes on the run, and checks into a remote motel run by a young man under the domination of his mother.",
+
+            "likeCount": "37"
+
+
+        },
+        {
+
+            "name": "The Usual Suspects",
+
+            "productionYear": "1995",
+
+            "image": "./img/usualsuspects.jpg",
+
+            "description": "A sole survivor tells of the twisty events leading up to a horrific gun battle on a boat, which began when five criminals met at a seemingly random police lineup.",
+
+            "likeCount": "51"
+
+
+        },
+        {
+
+            "name": "Memento",
+
+            "productionYear": "2000",
+
+            "image": "./img/memento.jpg",
+
+            "description": "A man with short-term memory loss attempts to track down his wife's murderer.",
+
+            "likeCount": "41"
+
+
+        },
+        {
+
+            "name": "Raiders of the Lost Ark",
+
+            "productionYear": "1981",
+
+            "image": "./img/raidersofthelostark.jpg",
+
+            "description": "In 1936, archaeologist and adventurer Indiana Jones is hired by the U.S. government to find the Ark of the Covenant before Adolf Hitler's Nazis can obtain its awesome powers.",
+
+            "likeCount": "24"
+
+
+        },
+        {
+
+            "name": "Django Unchained",
+
+            "productionYear": "2012",
+
+            "image": "./img/django.jpg",
+
+            "description": "With the help of a German bounty hunter, a freed slave sets out to rescue his wife from a brutal Mississippi plantation owner.",
+
+            "likeCount": "41"
+
+
+        },
+        {
+
+            "name": "Avengers: Infinity War",
+
+            "productionYear": "2018",
+
+            "image": "./img/infinitywar.jpg",
+
+            "description": "The Avengers and their allies must be willing to sacrifice all in an attempt to defeat the powerful Thanos before his blitz of devastation and ruin puts an end to the universe.",
+
+            "likeCount": "41"
+
+
+        },
+        {
+
+            "name": "Witness for the Prosecution",
+
+            "productionYear": "1957",
+
+            "image": "./img/witness.jpg",
+
+            "description": "A veteran British barrister must defend his client in a murder trial that has surprise after surprise.",
+
+            "likeCount": "41"
+
+
+        },
+        {
+
+            "name": "Amadeus",
+
+            "productionYear": "1984",
+
+            "image": "./img/amadeus.jpg",
+
+            "description": "The life, success and troubles of Wolfgang Amadeus Mozart, as told by Antonio Salieri, the contemporaneous composer who was insanely jealous of Mozart's talent and claimed to have murdered him.",
+
+            "likeCount": "41"
+
+
+        },
+        {
+
+            "name": "Batman Begins",
+
+            "productionYear": "2005",
+
+            "image": "./img/batmanbegins.jpg",
+
+            "description": "After training with his mentor, Batman begins his fight to free crime-ridden Gotham City from corruption.",
+
+            "likeCount": "41"
+
+
+        },
+        {
+
+            "name": "Shutter Island",
+
+            "productionYear": "2010",
+
+            "image": "./img/shutterisland.jpg",
+
+            "description": "In 1954, a U.S. Marshal investigates the disappearance of a murderer who escaped from a hospital for the criminally insane.",
+
+            "likeCount": "41"
+
+
+        },
+        {
+
+            "name": "The Third Man",
+
+            "productionYear": "1949",
+
+            "image": "./img/thethirdman.jpg",
+
+            "description": "Pulp novelist Holly Martins travels to shadowy, postwar Vienna, only to find himself investigating the mysterious death of an old friend, Harry Lime.",
+
+            "likeCount": "41"
+
+
+        },
+        {
+
+            "name": "Catch Me If You Can",
+
+            "productionYear": "2002",
+
+            "image": "./img/catchmeifucan.jpg",
+
+            "description": "A seasoned FBI agent pursues Frank Abagnale Jr. who, before his 19th birthday, successfully forged millions of dollars' worth of checks while posing as a Pan Am pilot, a doctor, and a legal prosecutor.",
+
+            "likeCount": "41"
+
+
+        },
+        {
+
+            "name": "Life of Brian",
+
+            "productionYear": "1979",
+
+            "image": "./img/lifeofbrian.jpg",
+
+            "description": "Born on the original Christmas in the stable next door to Jesus, Brian of Nazareth spends his life being mistaken for a messiah.",
+
+            "likeCount": "41"
+
+
+        },
+        {
+
+            "name": "Harry Potter and the Deathly Hallows: Part 2",
+
+            "productionYear": "2011",
+
+            "image": "./img/harrypotter8.jpg",
+
+            "description": "Harry, Ron, and Hermione search for Voldemort's remaining Horcruxes in their effort to destroy the Dark Lord as the final battle rages on at Hogwarts.",
+
+            "likeCount": "41"
+
+
+        },
+        {
+
+            "name": "Guardians of the Galaxy",
+
+            "productionYear": "2014",
+
+            "image": "./img/guardians1.jpg",
+
+            "description": "A group of intergalactic criminals must pull together to stop a fanatical warrior with plans to purge the universe.",
+
+            "likeCount": "41"
+
+
+        },
+        {
+
+            "name": "Monsters, Inc.",
+
+            "productionYear": "2001",
+
+            "image": "./img/monstersinc.jpg",
+
+            "description": "In order to power the city, monsters have to scare children so that they scream. However, the children are toxic to the monsters, and after a child gets through, 2 monsters realize things may not be what they think.",
+
+            "likeCount": "41"
+
+
+        },
+        {
+
+            "name": "The Truman Show",
+
+            "productionYear": "1998",
+
+            "image": "./img/trumanshow.jpg",
+
+            "description": "An insurance salesman discovers his whole life is actually a reality TV show.",
+
+            "likeCount": "41"
+
+
+        },
+        {
+
+            "name": "Kill Bill: Vol. 1",
+
+            "productionYear": "2003",
+
+            "image": "./img/killbill1.jpg",
+
+            "description": "After awakening from a four-year coma, a former assassin wreaks vengeance on the team of assassins who betrayed her.",
+
+            "likeCount": "41"
+
+
+        },
+        {
+
+            "name": "The Wolf of Wall Street",
+
+            "productionYear": "2013",
+
+            "image": "./img/wolfofwallstreet.jpg",
+
+            "description": "Based on the true story of Jordan Belfort, from his rise to a wealthy stock-broker living the high life to his fall involving crime, corruption and the federal government.",
+
+            "likeCount": "41"
+
+
+        },
+        {
+
+            "name": "Taxi Driver",
+
+            "productionYear": "1976",
+
+            "image": "./img/taxidriver.jpg",
+
+            "description": "A mentally unstable veteran works as a nighttime taxi driver in New York City, where the perceived decadence and sleaze fuels his urge for violent action by attempting to liberate a presidential campaign worker and an underage prostitute.",
+
+            "likeCount": "41"
+
+
+        },
+        {
+
+            "name": "Full Metal Jacket",
+
+            "productionYear": "1987",
+
+            "image": "./img/fullmetaljacket.jpg",
+
+            "description": "A pragmatic U.S. Marine observes the dehumanizing effects the Vietnam War has on his fellow recruits from their brutal boot camp training to the bloody street fighting in Hue.",
+
+            "likeCount": "41"
+
+
+        },
+        {
+
+            "name": "The Dark Knight Rises",
+
+            "productionYear": "2012",
+
+            "image": "./img/batman3.jpg",
+
+            "description": "Eight years after the Joker's reign of anarchy, Batman, with the help of the enigmatic Catwoman, is forced from his exile to save Gotham City, now on the edge of total annihilation, from the brutal guerrilla terrorist Bane.",
+
+            "likeCount": "41"
+
+
+        },
+        {
+
+            "name": "The Lives of Others",
+
+            "productionYear": "2006",
+
+            "image": "./img/livesofothers.jpg",
+
+            "description": "In 1984 East Berlin, an agent of the secret police, conducting surveillance on a writer and his lover, finds himself becoming increasingly absorbed by their lives.",
+
+            "likeCount": "41"
+
+
+        },
+        {
+
+            "name": "Spirited Away",
+
+            "productionYear": "2001",
+
+            "image": "./img/spiritedaway.jpg",
+
+            "description": "During her family's move to the suburbs, a sullen 10-year-old girl wanders into a world ruled by gods, witches, and spirits, and where humans are changed into beasts.",
+
+            "likeCount": "41"
+
+
+        },
+        {
+
+            "name": "Se7en",
+
+            "productionYear": "1995",
+
+            "image": "./img/seven.jpg",
+
+            "description": "Two detectives, a rookie and a veteran, hunt a serial killer who uses the seven deadly sins as his motives.",
+
+            "likeCount": "41"
+
+
+        },
+        {
+
+            "name": "Goodfellas",
+
+            "productionYear": "1990",
+
+            "image": "./img/goodfellas.jpg",
+
+            "description": "The story of Henry Hill and his life in the mob, covering his relationship with his wife Karen Hill and his mob partners Jimmy Conway and Tommy DeVito in the Italian-American crime syndicate.",
+
+            "likeCount": "41"
+
+
+        },
+        {
+
+            "name": "The Lord of the Rings: The Return of the King",
+
+            "productionYear": "2003",
+
+            "image": "./img/lordtherings3.jpg",
+
+            "description": "Gandalf and Aragorn lead the World of Men against Sauron's army to draw his gaze from Frodo and Sam as they approach Mount Doom with the One Ring",
+
+            "likeCount": "41"
+
+
+        },
+        {
+
+            "name": "The Lord of the Rings: The Two Towers",
+
+            "productionYear": "2002",
+
+            "image": "./img/lordoftherings2.jpg",
+
+            "description": "While Frodo and Sam edge closer to Mordor with the help of the shifty Gollum, the divided fellowship makes a stand against Sauron's new ally, Saruman, and his hordes of Isengard.",
+
+            "likeCount": "41"
+
+
+        },
+        {
+
+            "name": "The Lion King",
+
+            "productionYear": "1994",
+
+            "image": "./img/lionking.jpg",
+
+            "description": "A Lion cub crown prince is tricked by a treacherous uncle into thinking he caused his father's death and flees into exile in despair, only to learn in adulthood his identity and his responsibilities.",
+
+            "likeCount": "41"
+
+
+        },
+        {
+
+            "name": "Kimi no na wa.",
+
+            "productionYear": "2016",
+
+            "image": "./img/kiminonawa.jpg",
+
+            "description": "Two strangers find themselves linked in a bizarre way. When a connection forms, will distance be the only thing to keep them apart?",
+
+            "likeCount": "41"
+
+
+        },
+        {
+
+            "name": "Vertigo",
+
+            "productionYear": "1958",
+
+            "image": "./img/vertigo.jpg",
+
+            "description": "A former police detective juggles wrestling with his personal demons and becoming obsessed with a hauntingly beautiful woman.",
+
+            "likeCount": "41"
+
+
+        },
+        {
+
+            "name": "Snatch",
+
+            "productionYear": "2000",
+
+            "image": "./img/snatch.jpg",
+
+            "description": "Unscrupulous boxing promoters, violent bookmakers, a Russian gangster, incompetent amateur robbers and supposedly Jewish jewelers fight to track down a priceless stolen diamond.",
+
+            "likeCount": "41"
+
+
+        },
+        {
+
+            "name": "Lock, Stock and Two Smoking Barrels",
+
+            "productionYear": "1998",
+
+            "image": "./img/lockstockand2.jpg",
+
+            "description": "A botched card game in London triggers four friends, thugs, weed-growers, hard gangsters, loan sharks and debt collectors to collide with each other in a series of unexpected events, all for the sake of weed, cash and two antique shotguns.",
+
+            "likeCount": "41"
+
+
+        },
+        
     ];
+
