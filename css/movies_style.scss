@@ -407,11 +407,11 @@ main {
   font-size: 150%;
   font-weight: bold;
 
-    .nextMoviePageBtn{
+    div[class^=nextMoviePageBtn]{
       margin: 0% 0% 0% 1%;
       text-decoration: underline;
     }
-    .nextMoviePageBtn:hover{
+    div[class^=nextMoviePageBtn]:hover{
       cursor: pointer;
       opacity: 0.5;
     }

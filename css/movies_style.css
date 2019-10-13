@@ -280,10 +280,10 @@ main #moreMoviesBtnsDiv {
   padding: 1%;
   font-size: 150%;
   font-weight: bold; }
-  main #moreMoviesBtnsDiv .nextMoviePageBtn {
+  main #moreMoviesBtnsDiv div[class^=nextMoviePageBtn] {
     margin: 0% 0% 0% 1%;
     text-decoration: underline; }
-  main #moreMoviesBtnsDiv .nextMoviePageBtn:hover {
+  main #moreMoviesBtnsDiv div[class^=nextMoviePageBtn]:hover {
     cursor: pointer;
     opacity: 0.5; }
 
