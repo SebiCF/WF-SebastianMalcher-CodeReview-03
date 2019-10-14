@@ -1,16 +1,17 @@
-let movies = JSON.parse(localStorage.getItem('movies_data'));/* get from localStorage*/
-        
-if (movies == null){/* if localStorage is empty copy movies*/
+let movies = JSON.parse(localStorage.getItem('movies_data')); /* get from localStorage*/
+
+if (movies == null) { /* if localStorage is empty copy movies*/
     movies = movies_data;
     for (i = 0; i < movies.length; i++) { /* randomize likeCount of each movie on site (re)load*/
-    let randomLikes = Math.floor(Math.random() * (500 - 60 + 1) + 60);
-    movies[i].likeCount = randomLikes;}
+        let randomLikes = Math.floor(Math.random() * (500 - 60 + 1) + 60);
+        movies[i].likeCount = randomLikes;
+    }
 }
 
 
 
 for (i = 0; i < movies.length; i++) { /* randomize likeCount of each movie on site (re)load*/
-    let genres = ["Adventure","Fantasy","Sci-Fi","Action","Crime","Horror","Comedy","Drama","Animation","Romance"];
+    let genres = ["Adventure", "Fantasy", "Sci-Fi", "Action", "Crime", "Horror", "Comedy", "Drama", "Animation", "Romance"];
     let randomNumber = Math.floor(Math.random() * genres.length);
     let randomGenre = genres[randomNumber];
     movies[i].genre = randomGenre;
@@ -127,9 +128,7 @@ function createMovies(movies, movieCounter) {
         openOneMovieOnClick(movieImg, movies);
     }
 
-
     createNextMoviePageBtns(movies);
-
 
     if (document.querySelector("[class^=nextMoviePageBtn]").style.color == "#5591ff") { /* resets nextMoviePageButton color if necessary*/
         resetNextMoviePageBtnColor();
@@ -142,8 +141,6 @@ function createMovies(movies, movieCounter) {
             elem.style.color = "#5591ff";
             elem.style.textDecorationColor = "#5591ff";
         })
-
-
     };
 
     let allNextMoviePageBtns = document.querySelectorAll("[class^=nextMoviePageBtn]") /*creates functionality for each nextMoviePageButton*/
@@ -182,24 +179,23 @@ function createNextMoviePageBtns(movies) {
         if (x > 0) {
             numberOfNextPageBtns++;
         }
+
         if (movies.length < 10) {
             numberOfNextPageBtns = 1;
         }
+
         for (i = 0; i < numberOfNextPageBtns; i++) { /* creates nextMoviePageButton*/
             let nextMoviePageBtnTop = document.createElement("div");
             nextMoviePageBtnTop.className = "nextMoviePageBtn" + i;
             nextMoviePageBtnTop.innerHTML = i + 1;
-
             document.querySelector("[class=moreMoviesBtnsDivTop]").appendChild(nextMoviePageBtnTop);
-
         }
+
         for (i = 0; i < numberOfNextPageBtns; i++) { /* creates nextMoviePageButton*/
             let nextMoviePageBtn = document.createElement("div");
             nextMoviePageBtn.className = "nextMoviePageBtn" + i;
             nextMoviePageBtn.innerHTML = i + 1;
-
             document.querySelector("[class=moreMoviesBtnsDiv]").appendChild(nextMoviePageBtn);
-
         }
     }
 }
@@ -241,8 +237,6 @@ function sortMoviesByLikesDesc(movieCounter, movies) {
         elem.style.color = "#5591ff";
         elem.style.textDecorationColor = "#5591ff";
     })
-
-    
 }
 
 
@@ -262,8 +256,6 @@ function sortMoviesByLikesAsc(movieCounter, movies) {
         elem.style.color = "#5591ff";
         elem.style.textDecorationColor = "#5591ff";
     })
-
-    
 }
 
 
@@ -295,7 +287,6 @@ function sortMoviesByName() {
     document.getElementById("sortBtnAsc").addEventListener("click", function() {
         sortMoviesByLikesAsc(movieCounter, movies)
     });
-
 }
 
 
@@ -306,7 +297,6 @@ function createFooter() {
     let footerHeading = document.createElement("h1");
     footerHeading.innerHTML = "MovieFactory";
     footer.appendChild(footerHeading);
-
 }
 
 
@@ -363,14 +353,11 @@ function createHomePage(movies) {
         movieFlexChildren.appendChild(description);
         movieFlexChildren.appendChild(movieImg);
         movieFlexChildren.appendChild(likeBtnDiv);
-
         openOneMovieOnClick(movieImg, popularMoviesByLikes);
-
     }
 
     increaseCounterOnClick(popularMoviesByLikes);
 }
-
 
 function createOneMovie(randomMovie, text, movies) {
 
@@ -451,43 +438,65 @@ function search(movies, movieCounter) {
     let moviesSortedBySearch = [];
 
     for (i = 0; i < movies.length; i++) {
-        
+
         let movieNames = movies[i].name.toLowerCase();
         let productionYear = movies[i].productionYear;
         let movieGenres = movies[i].genre.toLowerCase();
 
+        
+        if (movieNames.indexOf(searchInput) > -1 ) {
+            
+            let y = movieNames.indexOf(searchInput);
+            let f = movieNames.lastIndexOf(searchInput, y);
 
-        if (movieNames.lastIndexOf(searchInput, 0) === 0 || movieGenres.lastIndexOf(searchInput, 0) === 0) {
+            let newInput = searchInput.slice(1);
+            let newMovieNames = movieNames.slice(y+1);
+                if (newInput == ""){
+                    if (movieNames.lastIndexOf(searchInput, 0) === 0) {
+                    let currentMovieObj = movies[i];
+                    moviesSortedBySearch.push(currentMovieObj);
+                    }
+            let z = movieNames.indexOf(searchInput, y);
+        }
+                else if (newMovieNames.lastIndexOf(newInput, 0) === 0){
+
+                    let currentMovieObj = movies[i];
+                    moviesSortedBySearch.push(currentMovieObj);
+                }
+        
+        } else if (productionYear.lastIndexOf(searchInput, 0) === 0) {
             let currentMovieObj = movies[i];
             moviesSortedBySearch.push(currentMovieObj);
-        } else if (productionYear.lastIndexOf(searchInput, 0) === 0) {
+        }
+        else if (movieGenres.lastIndexOf(searchInput, 0) === 0) {
             let currentMovieObj = movies[i];
             moviesSortedBySearch.push(currentMovieObj);
         }
     }
 
-    if (moviesSortedBySearch.length == 0){
-            alert("No search entries found");
-            return;
+    if (moviesSortedBySearch.length == 0) {
 
+        createMovieFlexBox();
+        createMovies(movies, movieCounter);
+        increaseCounterOnClick(movies);
+        alert("No search entries found");
+
+    } else {
+
+        createMovieFlexBox();
+        createMovies(moviesSortedBySearch, movieCounter);
+        increaseCounterOnClick(movies);
+        document.getElementById("sortBtnDesc").addEventListener("click", function() {
+            sortMoviesByLikesDesc(movieCounter, moviesSortedBySearch)
+        });
+        document.getElementById("sortBtnAsc").addEventListener("click", function() {
+            sortMoviesByLikesAsc(movieCounter, moviesSortedBySearch)
+        });
     }
-
-    createMovieFlexBox();
-    createMovies(moviesSortedBySearch, movieCounter);
-    increaseCounterOnClick(movies);
-
-    document.getElementById("sortBtnDesc").addEventListener("click", function() {
-        sortMoviesByLikesDesc(movieCounter, moviesSortedBySearch)
-    });
-    document.getElementById("sortBtnAsc").addEventListener("click", function() {
-        sortMoviesByLikesAsc(movieCounter, moviesSortedBySearch)
-    });
 }
 
+function saveToLocalStorage(movies) {
 
-function saveToLocalStorage(movies){
-    
     localStorage.setItem('movies_data', JSON.stringify(movies));
     console.log(localStorage)
 }
-
