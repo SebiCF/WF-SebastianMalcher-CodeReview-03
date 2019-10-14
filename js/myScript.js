@@ -1,7 +1,20 @@
-for (i = 0; i < movies.length; i++) { /* randomize likeCount of each movie on site (re)load*/
-    let randomLikes = Math.floor(Math.random() * (500 - 60 + 1) + 60);
-    movies[i].likeCount = randomLikes;
+
+    
+    let movies = JSON.parse(localStorage.getItem('movies_data'));
+        console.log(movies.length)
+        if (movies.length === undefined){
+            for (i = 0; i < movies.length; i++) { /* randomize likeCount of each movie on site (re)load*/
+            let randomLikes = Math.floor(Math.random() * (500 - 60 + 1) + 60);
+            movies[i].likeCount = randomLikes;
 }
+            movies = movie_data;
+        }
+   console.log(movies)
+
+
+
+
+
 
 for (i = 0; i < movies.length; i++) { /* randomize likeCount of each movie on site (re)load*/
     let genres = ["Adventure","Fantasy","Sci-Fi","Action","Crime","Horror","Comedy","Drama","Animation","Romance"];
@@ -217,7 +230,8 @@ function increaseCounterOnClick(movies) { /* increase likeCounter on thumbsUp cl
                     let currentLikeCount = parseInt(movies[i].likeCount);
                     movies[i].likeCount = currentLikeCount + 1;
                     document.getElementById(likeAmountId).innerHTML = movies[i].likeCount;
-
+                    saveToLocalStorage(movies);
+                    console.log(movies)
                 }
             }
         })
@@ -491,3 +505,11 @@ function search(movies, movieCounter) {
         sortMoviesByLikesAsc(movieCounter, moviesSortedBySearch)
     });
 }
+
+
+function saveToLocalStorage(movies){
+    
+    localStorage.setItem('movies_data', JSON.stringify(movies));
+    console.log(localStorage)
+}
+
