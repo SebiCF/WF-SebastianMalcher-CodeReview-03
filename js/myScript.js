@@ -425,6 +425,7 @@ function createLikeButtonFunctionalityForOneMovie(movies) {
         let currentLikeCount = parseInt(movies[current].likeCount);
         movies[current].likeCount = currentLikeCount + 1;
         document.getElementById("likeAmountRandom").innerHTML = movies[current].likeCount;
+        saveToLocalStorage(movies);
     });
 }
 
