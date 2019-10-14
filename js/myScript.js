@@ -1,18 +1,11 @@
-
-    
-    let movies = JSON.parse(localStorage.getItem('movies_data'));
+let movies = JSON.parse(localStorage.getItem('movies_data'));/* get from localStorage*/
         
-        
-
-        if (movies == null){
-            movies = movies_data;
-            for (i = 0; i < movies.length; i++) { /* randomize likeCount of each movie on site (re)load*/
-            let randomLikes = Math.floor(Math.random() * (500 - 60 + 1) + 60);
-            movies[i].likeCount = randomLikes;}
-        }
-
-
-
+if (movies == null){/* if localStorage is empty copy movies*/
+    movies = movies_data;
+    for (i = 0; i < movies.length; i++) { /* randomize likeCount of each movie on site (re)load*/
+    let randomLikes = Math.floor(Math.random() * (500 - 60 + 1) + 60);
+    movies[i].likeCount = randomLikes;}
+}
 
 
 
@@ -112,8 +105,6 @@ function createMovieFlexBox() {
 }
 
 function createMovies(movies, movieCounter) {
-
-
 
     let createMovieStart = movieCounter - 10;
     for (i = createMovieStart; i < movieCounter; i++) { /* creates movie divs ending at movies[movieCounter] and starting 10 movies before that*/
