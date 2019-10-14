@@ -1,15 +1,15 @@
 
     
     let movies = JSON.parse(localStorage.getItem('movies_data'));
-        console.log(movies.length)
-        if (movies.length === undefined){
+        
+        
+
+        if (movies == null){
+            movies = movies_data;
             for (i = 0; i < movies.length; i++) { /* randomize likeCount of each movie on site (re)load*/
             let randomLikes = Math.floor(Math.random() * (500 - 60 + 1) + 60);
-            movies[i].likeCount = randomLikes;
-}
-            movies = movie_data;
+            movies[i].likeCount = randomLikes;}
         }
-   console.log(movies)
 
 
 
