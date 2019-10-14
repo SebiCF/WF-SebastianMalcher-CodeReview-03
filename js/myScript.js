@@ -150,15 +150,9 @@ function createMovies(movies, movieCounter) {
     allNextMoviePageBtns.forEach(function(elem) {
         elem.addEventListener("click", function(e) {
             document.querySelector(".flex").innerHTML = " "; /* resets already created movies*/
-            let contentHeader = document.getElementById("contentHeader");
-            contentHeader.id = "contentHeader"
-            contentHeader.innerHTML = `<h2>All Movies</h2><span id="sortBtnAsc">▲</span><span>Sort</span><span id="sortBtnDesc">▼</span>`;
-            document.querySelector("main").insertBefore(contentHeader, document.querySelector("[class=moreMoviesBtnsDivTop]"));
             movieCounter = parseInt(e.target.innerHTML) * 10;
-
             createMovies(movies, movieCounter);
             increaseCounterOnClick(movies);
-
             let currentNextMovieBtnBlue = e.target.className;
             let bothCurrentBtns = document.querySelectorAll(`[class=${currentNextMovieBtnBlue}]`);
             bothCurrentBtns.forEach(function(elem) {
@@ -248,11 +242,7 @@ function sortMoviesByLikesDesc(movieCounter, movies) {
         elem.style.textDecorationColor = "#5591ff";
     })
 
-    if (movieCounter < 11) {
-        resetNextMoviePageBtnColor(); /* if 1st page is active, reset all colors and give 1st nextMovePageBtn blue color*/
-        document.querySelector("[class^=nextMoviePageBtn]").style.color = "#5591ff";
-        document.querySelector("[class^=nextMoviePageBtn]").style.textDecorationColor = "#5591ff";
-    };
+    
 }
 
 
@@ -273,11 +263,7 @@ function sortMoviesByLikesAsc(movieCounter, movies) {
         elem.style.textDecorationColor = "#5591ff";
     })
 
-    if (movieCounter < 11) {
-        resetNextMoviePageBtnColor(); /* if 1st page is active, reset all colors and give 1st nextMovePageBtn blue color*/
-        document.querySelector("[class^=nextMoviePageBtn]").style.color = "#5591ff";
-        document.querySelector("[class^=nextMoviePageBtn]").style.textDecorationColor = "#5591ff";
-    };
+    
 }
 
 
