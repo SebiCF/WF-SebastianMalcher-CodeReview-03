@@ -2,6 +2,7 @@ let movies = JSON.parse(localStorage.getItem('movies_data')); /* get from localS
 
 if (movies == null) { /* if localStorage is empty copy movies*/
     movies = movies_data;
+    saveToLocalStorage(movies);
     for (i = 0; i < movies.length; i++) { /* randomize likeCount of each movie on site (re)load*/
         let randomLikes = Math.floor(Math.random() * (500 - 60 + 1) + 60);
         movies[i].likeCount = randomLikes;
