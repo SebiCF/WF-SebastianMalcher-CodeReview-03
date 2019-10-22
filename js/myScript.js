@@ -316,7 +316,7 @@ function createHomePage(movies) {
 
     let currentPicture = document.getElementById(randomMovie);
     openOneMovieOnClick(currentPicture, movies);
-    let contentHeader = document.createElement("div"); /* creates popularHeader and flexbox for popularMovies*/
+    let contentHeader = document.createElement("div"); /* creates popularHeader and flex box for popularMovies*/
     contentHeader.id = "contentHeader";
     contentHeader.innerHTML = "<h2>Popular Movies</h2>";
     let mainSite = document.getElementById("mainSite");
@@ -329,7 +329,7 @@ function createHomePage(movies) {
     document.querySelector("main").appendChild(movieFlexBox);
 
     /*createPopularMovies(randomMovie, movies)*/
-    let popularMoviesByLikes = movies.slice(0); /*creates ordered by most likes copy of movies and creates 3 divs of them*/
+    let popularMoviesByLikes = movies.slice(0); /*creates ordered by most likes copy of movies and creates 3 div of them*/
     popularMoviesByLikes.sort(function(a, b) {
         return b.likeCount - a.likeCount;
     });

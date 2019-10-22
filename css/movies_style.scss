@@ -32,7 +32,7 @@ header {
     }
 }
 
-nav {
+nav {/*navbar settings*/
 
 
     ul {
@@ -64,9 +64,13 @@ nav {
 
 }
 
+
+/*main content*/
+
+
 main {
 
-    #contentHeader {
+    #contentHeader {/* h1 for movies div*/
         position: relative;
         text-align: center;
         font-size: 110%;
@@ -118,7 +122,7 @@ main {
         cursor: pointer;
     }
 
-    #homeFlex {
+    #homeFlex {/* flexbox for popular movies*/
 
         .likebutton:hover {
             opacity: 0.5;
@@ -141,7 +145,7 @@ main {
             transform: skew(-10deg);
         }
 
-        div {
+        div {/*container for movie information*/
             width: 24%;
             margin-top: 2%;
 
@@ -209,7 +213,7 @@ main {
         }
     }
 
-    .flex {
+    .flex {/* flexbox for movies site*/
         display: flex;
         justify-content: space-around;
         flex-wrap: wrap;
@@ -302,7 +306,7 @@ main {
 
     }
 
-    #flexRandom {
+    #flexRandom {/*featuread movie*/
         display: flex;
         justify-content: center;
         margin-bottom: -5%;
@@ -317,8 +321,6 @@ main {
         line-height: 120%;
         position: relative;
         border-radius: 2%;
-
-
 
         img {
             /* movie poster*/
@@ -417,7 +419,7 @@ main {
         }
     }
 
-    div[class^=moreMoviesBtnsDiv] {
+    div[class^=moreMoviesBtnsDiv] {/*next movie buttons on movies site*/
         display: flex;
         justify-content: center;
         color: black;
@@ -449,8 +451,6 @@ footer {
         margin: 0;
     }
 }
-
-
 
 #searchInput {
     display: block;
