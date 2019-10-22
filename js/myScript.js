@@ -223,86 +223,6 @@ function increaseCounterOnClick(movies) {
     });
 }
 
-
-function sortMoviesByLikesDesc(movieCounter, movies) {
-
-    movies.sort(function (a, b) {
-        return b.likeCount - a.likeCount;
-    });
-
-    document.querySelector(".flex").innerHTML = " ";
-    createMovies(movies, movieCounter);
-    increaseCounterOnClick(movies);
-
-    let currentActivePageNumber = movieCounter / 10 - 1;
-    let currentBtnClassName = "nextMoviePageBtn" + currentActivePageNumber;
-    let bothBtns = document.querySelectorAll(`[class=${currentBtnClassName}]`);
-    bothBtns.forEach(function (elem) {
-        elem.style.color = "#5591ff";
-        elem.style.textDecorationColor = "#5591ff";
-    })
-}
-
-
-function sortMoviesByLikesAsc(movieCounter, movies) {
-
-    movies.sort(function (a, b) {
-        return a.likeCount - b.likeCount;
-    });
-    document.querySelector(".flex").innerHTML = " ";
-    createMovies(movies, movieCounter);
-    increaseCounterOnClick(movies);
-
-    let currentActivePageNumber = movieCounter / 10 - 1;
-    let currentBtnClassName = "nextMoviePageBtn" + currentActivePageNumber;
-    let bothBtns = document.querySelectorAll(`[class=${currentBtnClassName}]`);
-    bothBtns.forEach(function (elem) {
-        elem.style.color = "#5591ff";
-        elem.style.textDecorationColor = "#5591ff";
-    })
-}
-
-
-function sortMoviesByName() {
-
-    movies.sort(function (a, b) {
-        var nameA = a.name.toLowerCase(),
-            nameB = b.name.toLowerCase();
-        if (nameA < nameB)
-            return -1;
-        if (nameA > nameB)
-            return 1;
-        return 0;
-    });
-
-
-    document.querySelector("main").innerHTML = " ";
-    let contentHeader = document.createElement("div");
-    contentHeader.id = "contentHeader"
-    contentHeader.innerHTML = `<h2>All Movies</h2><span id="sortBtnAsc">▲</span><span>Sort</span><span id="sortBtnDesc">▼</span>`;
-    document.querySelector("main").appendChild(contentHeader);
-    createMovieFlexBox()
-    createMovies(movies, movieCounter);
-    increaseCounterOnClick(movies);
-
-    document.getElementById("sortBtnDesc").addEventListener("click", function () {
-        sortMoviesByLikesDesc(movieCounter, movies)
-    });
-    document.getElementById("sortBtnAsc").addEventListener("click", function () {
-        sortMoviesByLikesAsc(movieCounter, movies)
-    });
-}
-
-
-function createFooter() {
-    let footer = document.createElement("footer");
-    footer.id = "footer";
-    document.getElementById("mainSite").appendChild(footer);
-    let footerHeading = document.createElement("h1");
-    footerHeading.innerHTML = "MovieFactory";
-    footer.appendChild(footerHeading);
-}
-
 function createHomePage(movies) {
 
     let main = document.querySelector("main"); /* resets main*/
@@ -427,6 +347,83 @@ function openOneMovieOnClick(currentElement, movies) {
 
     })
 }
+function sortMoviesByLikesDesc(movieCounter, movies) {
+
+    movies.sort(function (a, b) {
+        return b.likeCount - a.likeCount;
+    });
+
+    document.querySelector(".flex").innerHTML = " ";
+    createMovies(movies, movieCounter);
+    increaseCounterOnClick(movies);
+
+    let currentActivePageNumber = movieCounter / 10 - 1;
+    let currentBtnClassName = "nextMoviePageBtn" + currentActivePageNumber;
+    let bothBtns = document.querySelectorAll(`[class=${currentBtnClassName}]`);
+    bothBtns.forEach(function (elem) {
+        elem.style.color = "#5591ff";
+        elem.style.textDecorationColor = "#5591ff";
+    })
+}
+
+
+function sortMoviesByLikesAsc(movieCounter, movies) {
+
+    movies.sort(function (a, b) {
+        return a.likeCount - b.likeCount;
+    });
+    document.querySelector(".flex").innerHTML = " ";
+    createMovies(movies, movieCounter);
+    increaseCounterOnClick(movies);
+
+    let currentActivePageNumber = movieCounter / 10 - 1;
+    let currentBtnClassName = "nextMoviePageBtn" + currentActivePageNumber;
+    let bothBtns = document.querySelectorAll(`[class=${currentBtnClassName}]`);
+    bothBtns.forEach(function (elem) {
+        elem.style.color = "#5591ff";
+        elem.style.textDecorationColor = "#5591ff";
+    })
+}
+
+function sortMoviesByName() {
+
+    movies.sort(function (a, b) {
+        var nameA = a.name.toLowerCase(),
+            nameB = b.name.toLowerCase();
+        if (nameA < nameB)
+            return -1;
+        if (nameA > nameB)
+            return 1;
+        return 0;
+    });
+
+    document.querySelector("main").innerHTML = " ";
+    let contentHeader = document.createElement("div");
+    contentHeader.id = "contentHeader"
+    contentHeader.innerHTML = `<h2>All Movies</h2><span id="sortBtnAsc">▲</span><span>Sort</span><span id="sortBtnDesc">▼</span>`;
+    document.querySelector("main").appendChild(contentHeader);
+    createMovieFlexBox()
+    createMovies(movies, movieCounter);
+    increaseCounterOnClick(movies);
+
+    document.getElementById("sortBtnDesc").addEventListener("click", function () {
+        sortMoviesByLikesDesc(movieCounter, movies)
+    });
+    document.getElementById("sortBtnAsc").addEventListener("click", function () {
+        sortMoviesByLikesAsc(movieCounter, movies)
+    });
+}
+
+
+function createFooter() {
+    let footer = document.createElement("footer");
+    footer.id = "footer";
+    document.getElementById("mainSite").appendChild(footer);
+    let footerHeading = document.createElement("h1");
+    footerHeading.innerHTML = "MovieFactory";
+    footer.appendChild(footerHeading);
+}
+
 
 function search(movies, movieCounter) {
     let searchInputNormal = document.getElementById("searchInput").value;

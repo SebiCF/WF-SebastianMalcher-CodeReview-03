@@ -23,6 +23,7 @@ body {
 header {
 
     background-color: #0d0d0d;
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,.25);
 
     h1 {
         text-align: center;
@@ -152,6 +153,7 @@ main {
             /*container for movie information*/
             width: 24%;
             margin-top: 2%;
+            box-shadow: 0 1px 2px 0 rgba(0,0,0,.25);
 
             div[class^=likeDiv] {
                 width: 31%;
@@ -168,6 +170,7 @@ main {
                     width: 40%;
                     padding-top: 12%;
                     height: 64%;
+                    
                 }
             }
 
@@ -192,6 +195,7 @@ main {
                 padding-top: 4%;
                 width: 96%;
                 height: 90%;
+                box-shadow: 0 1px 2px 0 rgba(0,0,0,.25);
             }
 
             img:hover {
@@ -233,6 +237,7 @@ main {
             line-height: 100%;
             position: relative;
             border-radius: 2%;
+            box-shadow: 0 1px 2px 0 rgba(0,0,0,.25);
 
 
 
@@ -244,6 +249,7 @@ main {
                 margin-right: 5%;
                 border-radius: 3%;
                 height: 97%;
+                box-shadow: 0 1px 2px 0 rgba(0,0,0,.25);
             }
 
             img:hover {
@@ -327,6 +333,7 @@ main {
         line-height: 120%;
         position: relative;
         border-radius: 2%;
+        box-shadow: 0 1px 2px 0 rgba(0,0,0,.25);
 
         img {
             /* movie poster*/
@@ -335,6 +342,7 @@ main {
             margin-right: 5%;
             border-radius: 3%;
             height: 97%;
+            box-shadow: 0 1px 2px 0 rgba(0,0,0,.25);
         }
 
         img:hover {
@@ -450,6 +458,7 @@ main {
 footer {
 
     background-color: #0d0d0d;
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,.25);
 
     h1 {
         text-align: center;
