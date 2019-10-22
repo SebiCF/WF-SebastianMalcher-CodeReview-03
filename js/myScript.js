@@ -1,26 +1,23 @@
 let movies = JSON.parse(localStorage.getItem('movies_data')); /* get from localStorage*/
 
 if (movies == null) {
-    /* if localStorage is empty copy movies*/
+    /* if localStorage is empty copy movies array*/
     movies = movies_data;
     saveToLocalStorage(movies);
     for (i = 0; i < movies.length; i++) {
-        /* randomize likeCount of each movie on site (re)load*/
+        /* randomize likeCount of each movie on localstorage (re)load*/
         let randomLikes = Math.floor(Math.random() * (500 - 60 + 1) + 60);
         movies[i].likeCount = randomLikes;
     }
 }
 
-
-
-for (i = 0; i < movies.length; i++) { /* randomize likeCount of each movie on site (re)load*/
+for (i = 0; i < movies.length; i++) {
+    /* randomize genre of each movie on site (re)load*/
     let genres = ["Adventure", "Fantasy", "Sci-Fi", "Action", "Crime", "Horror", "Comedy", "Drama", "Animation", "Romance"];
     let randomNumber = Math.floor(Math.random() * genres.length);
     let randomGenre = genres[randomNumber];
     movies[i].genre = randomGenre;
 }
-
-
 
 let movieCounter = 10; /* sets current page number*10 */
 
@@ -52,10 +49,10 @@ function createHeader() {
     navbar.appendChild(ul);
     ul.appendChild(li1);
     ul.appendChild(li2);
-    document.getElementById("reloadDefaultMovies").addEventListener("click", function() {
+    document.getElementById("reloadDefaultMovies").addEventListener("click", function () {
         sortMoviesByName(movies);
     });
-    document.getElementById("loadHomePage").addEventListener("click", function() {
+    document.getElementById("loadHomePage").addEventListener("click", function () {
         createHomePage(movies);
     });
     let searchInput = document.createElement("input");
@@ -63,11 +60,11 @@ function createHeader() {
     searchInput.type = "text";
     searchInput.id = "searchInput";
     searchInput.value = "Search by name, genre, ...";
-    searchInput.addEventListener('click', function(e) {
+    searchInput.addEventListener('click', function (e) {
         e.target.select();
     });
 
-    searchInput.addEventListener('keypress', function(e) {
+    searchInput.addEventListener('keypress', function (e) {
         var key = e.which || e.keyCode;
         if (key === 13) {
             search(movies, movieCounter);
@@ -85,10 +82,10 @@ function createMain() {
     contentHeader.innerHTML = `<h2>All Movies</h2><span id="sortBtnAsc">▲</span><span>Sort</span><span id="sortBtnDesc">▼</span>`;
     document.getElementById("mainSite").appendChild(main);
     main.appendChild(contentHeader);
-    document.getElementById("sortBtnDesc").addEventListener("click", function() {
+    document.getElementById("sortBtnDesc").addEventListener("click", function () {
         sortMoviesByLikesDesc(movieCounter, movies)
     }); /* adds functionality to sort buttons*/
-    document.getElementById("sortBtnAsc").addEventListener("click", function() {
+    document.getElementById("sortBtnAsc").addEventListener("click", function () {
         sortMoviesByLikesAsc(movieCounter, movies)
     });
 }
@@ -111,8 +108,10 @@ function createMovieFlexBox() {
 function createMovies(movies, movieCounter) {
 
     let createMovieStart = movieCounter - 10;
-    for (i = createMovieStart; i < movieCounter; i++) { /* creates movie divs ending at movies[movieCounter] and starting 10 movies before that*/
-        if (i == movies.length || movies.length === undefined) { /* breaks loop if no movies are left*/
+    for (i = createMovieStart; i < movieCounter; i++) {
+        /* creates movie divs ending at movies[movieCounter] and starting 10 movies before that*/
+        if (i == movies.length || movies.length === undefined) {
+            /* breaks loop if no movies are left*/
             break;
         }
         let movieFlexChildren = document.createElement("div");
@@ -133,50 +132,49 @@ function createMovies(movies, movieCounter) {
 
     createNextMoviePageBtns(movies);
 
-    if (document.querySelector("[class^=nextMoviePageBtn]").style.color == "#5591ff") { /* resets nextMoviePageButton color if necessary*/
+    if (document.querySelector("[class^=nextMoviePageBtn]").style.color == "#5591ff") {
+        /* resets nextMoviePageButton color if necessary*/
         resetNextMoviePageBtnColor();
     } else if (movieCounter > 11) {
         resetNextMoviePageBtnColor();
     } else {
         resetNextMoviePageBtnColor();
         let bothBtns = document.querySelectorAll("[class=nextMoviePageBtn0]");
-        bothBtns.forEach(function(elem) {
+        bothBtns.forEach(function (elem) {
             elem.style.color = "#5591ff";
             elem.style.textDecorationColor = "#5591ff";
         })
     };
 
     let allNextMoviePageBtns = document.querySelectorAll("[class^=nextMoviePageBtn]") /*creates functionality for each nextMoviePageButton*/
-    allNextMoviePageBtns.forEach(function(elem) {
-        elem.addEventListener("click", function(e) {
+    allNextMoviePageBtns.forEach(function (elem) {
+        elem.addEventListener("click", function (e) {
             document.querySelector(".flex").innerHTML = " "; /* resets already created movies*/
             movieCounter = parseInt(e.target.innerHTML) * 10;
             createMovies(movies, movieCounter);
             increaseCounterOnClick(movies);
             let currentNextMovieBtnBlue = e.target.className;
             let bothCurrentBtns = document.querySelectorAll(`[class=${currentNextMovieBtnBlue}]`);
-            bothCurrentBtns.forEach(function(elem) {
+            bothCurrentBtns.forEach(function (elem) {
                 elem.style.color = "#5591ff";
                 elem.style.textDecorationColor = "#5591ff";
             })
 
             scroll(0, 0);
-            document.getElementById("sortBtnDesc").addEventListener("click", function() {
+            document.getElementById("sortBtnDesc").addEventListener("click", function () {
                 sortMoviesByLikesDesc(movieCounter, movies)
             });
-            document.getElementById("sortBtnAsc").addEventListener("click", function() {
+            document.getElementById("sortBtnAsc").addEventListener("click", function () {
                 sortMoviesByLikesAsc(movieCounter, movies)
             });
-
         })
-
     })
-
 }
 
 function createNextMoviePageBtns(movies) {
 
-    if (document.querySelector("[class=moreMoviesBtnsDiv]").innerHTML == "") { /* only creates buttons when there are none*/
+    if (document.querySelector("[class=moreMoviesBtnsDiv]").innerHTML == "") {
+        /* only creates buttons when there are none*/
         let x = movies.length % (Math.floor((movies.length) / 10)); /* checks how many nextMoviePageBtns need to be created*/
         let numberOfNextPageBtns = Math.floor((movies.length) / 10);
         if (x > 0) {
@@ -187,14 +185,16 @@ function createNextMoviePageBtns(movies) {
             numberOfNextPageBtns = 1;
         }
 
-        for (i = 0; i < numberOfNextPageBtns; i++) { /* creates nextMoviePageButton*/
+        for (i = 0; i < numberOfNextPageBtns; i++) {
+            /* creates nextMoviePageButton*/
             let nextMoviePageBtnTop = document.createElement("div");
             nextMoviePageBtnTop.className = "nextMoviePageBtn" + i;
             nextMoviePageBtnTop.innerHTML = i + 1;
             document.querySelector("[class=moreMoviesBtnsDivTop]").appendChild(nextMoviePageBtnTop);
         }
 
-        for (i = 0; i < numberOfNextPageBtns; i++) { /* creates nextMoviePageButton*/
+        for (i = 0; i < numberOfNextPageBtns; i++) {
+            /* creates nextMoviePageButton*/
             let nextMoviePageBtn = document.createElement("div");
             nextMoviePageBtn.className = "nextMoviePageBtn" + i;
             nextMoviePageBtn.innerHTML = i + 1;
@@ -204,10 +204,11 @@ function createNextMoviePageBtns(movies) {
 }
 
 
-function increaseCounterOnClick(movies) { /* increase likeCounter on thumbsUp click*/
+function increaseCounterOnClick(movies) {
+    /* increase likeCounter on thumbsUp click*/
     let allLikeBtns = document.querySelectorAll(".likebutton")
-    allLikeBtns.forEach(function(elem) {
-        elem.addEventListener("click", function(e) {
+    allLikeBtns.forEach(function (elem) {
+        elem.addEventListener("click", function (e) {
             for (i = 0; i < movies.length; i++) {
                 if (e.target.id == "likeBtn" + i) {
                     let likeAmountId = "likeAmount" + i;
@@ -225,7 +226,7 @@ function increaseCounterOnClick(movies) { /* increase likeCounter on thumbsUp cl
 
 function sortMoviesByLikesDesc(movieCounter, movies) {
 
-    movies.sort(function(a, b) {
+    movies.sort(function (a, b) {
         return b.likeCount - a.likeCount;
     });
 
@@ -236,7 +237,7 @@ function sortMoviesByLikesDesc(movieCounter, movies) {
     let currentActivePageNumber = movieCounter / 10 - 1;
     let currentBtnClassName = "nextMoviePageBtn" + currentActivePageNumber;
     let bothBtns = document.querySelectorAll(`[class=${currentBtnClassName}]`);
-    bothBtns.forEach(function(elem) {
+    bothBtns.forEach(function (elem) {
         elem.style.color = "#5591ff";
         elem.style.textDecorationColor = "#5591ff";
     })
@@ -245,7 +246,7 @@ function sortMoviesByLikesDesc(movieCounter, movies) {
 
 function sortMoviesByLikesAsc(movieCounter, movies) {
 
-    movies.sort(function(a, b) {
+    movies.sort(function (a, b) {
         return a.likeCount - b.likeCount;
     });
     document.querySelector(".flex").innerHTML = " ";
@@ -255,7 +256,7 @@ function sortMoviesByLikesAsc(movieCounter, movies) {
     let currentActivePageNumber = movieCounter / 10 - 1;
     let currentBtnClassName = "nextMoviePageBtn" + currentActivePageNumber;
     let bothBtns = document.querySelectorAll(`[class=${currentBtnClassName}]`);
-    bothBtns.forEach(function(elem) {
+    bothBtns.forEach(function (elem) {
         elem.style.color = "#5591ff";
         elem.style.textDecorationColor = "#5591ff";
     })
@@ -264,7 +265,7 @@ function sortMoviesByLikesAsc(movieCounter, movies) {
 
 function sortMoviesByName() {
 
-    movies.sort(function(a, b) {
+    movies.sort(function (a, b) {
         var nameA = a.name.toLowerCase(),
             nameB = b.name.toLowerCase();
         if (nameA < nameB)
@@ -284,10 +285,10 @@ function sortMoviesByName() {
     createMovies(movies, movieCounter);
     increaseCounterOnClick(movies);
 
-    document.getElementById("sortBtnDesc").addEventListener("click", function() {
+    document.getElementById("sortBtnDesc").addEventListener("click", function () {
         sortMoviesByLikesDesc(movieCounter, movies)
     });
-    document.getElementById("sortBtnAsc").addEventListener("click", function() {
+    document.getElementById("sortBtnAsc").addEventListener("click", function () {
         sortMoviesByLikesAsc(movieCounter, movies)
     });
 }
@@ -301,7 +302,6 @@ function createFooter() {
     footerHeading.innerHTML = "MovieFactory";
     footer.appendChild(footerHeading);
 }
-
 
 function createHomePage(movies) {
 
@@ -330,7 +330,7 @@ function createHomePage(movies) {
 
     /*createPopularMovies(randomMovie, movies)*/
     let popularMoviesByLikes = movies.slice(0); /*creates ordered by most likes copy of movies and creates 3 div of them*/
-    popularMoviesByLikes.sort(function(a, b) {
+    popularMoviesByLikes.sort(function (a, b) {
         return b.likeCount - a.likeCount;
     });
     for (i = 0; i < 3; i++) {
@@ -347,7 +347,7 @@ function createHomePage(movies) {
         let description = document.createElement("div");
         description.id = "movieTitel" + i;
         description.innerHTML = `<h3>${popularMoviesByLikes[i].name}</h3>Year: ${popularMoviesByLikes[i].productionYear}`;
-        description.addEventListener("click", function() {
+        description.addEventListener("click", function () {
             scroll(0, 0);
             sortMoviesByName(movies);
         });
@@ -394,7 +394,7 @@ function createOneMovie(randomMovie, text, movies) {
 
 function createLikeButtonFunctionalityForOneMovie(movies) {
     let likeBtnRandom = document.getElementById("likeBtnRandom"); /* makes featuredMovie likeButton able to increase likeAmount of randomMovie*/
-    likeBtnRandom.addEventListener("click", function(randomMovie) {
+    likeBtnRandom.addEventListener("click", function (randomMovie) {
         let likeAmountRandomId = document.getElementById("likeAmountRandom");
         let currentRandomMovie = document.querySelector(".randomMovieClass");
         let current = currentRandomMovie.id;
@@ -414,7 +414,7 @@ function resetNextMoviePageBtnColor() {
 }
 
 function openOneMovieOnClick(currentElement, movies) {
-    currentElement.addEventListener("click", function(e) {
+    currentElement.addEventListener("click", function (e) {
         let main = document.querySelector("main"); /* resets main*/
         document.querySelector("main").innerHTML = " ";
         let info = "Information";
@@ -446,32 +446,29 @@ function search(movies, movieCounter) {
         let productionYear = movies[i].productionYear;
         let movieGenres = movies[i].genre.toLowerCase();
 
-        
-        if (movieNames.indexOf(searchInput) > -1 ) {
-            
+        if (movieNames.indexOf(searchInput) > -1) {
+
             let y = movieNames.indexOf(searchInput);
             let f = movieNames.lastIndexOf(searchInput, y);
 
             let newInput = searchInput.slice(1);
-            let newMovieNames = movieNames.slice(y+1);
-                if (newInput == ""){
-                    if (movieNames.lastIndexOf(searchInput, 0) === 0) {
-                    let currentMovieObj = movies[i];
-                    moviesSortedBySearch.push(currentMovieObj);
-                    }
-            let z = movieNames.indexOf(searchInput, y);
-        }
-                else if (newMovieNames.lastIndexOf(newInput, 0) === 0){
-
+            let newMovieNames = movieNames.slice(y + 1);
+            if (newInput == "") {
+                if (movieNames.lastIndexOf(searchInput, 0) === 0) {
                     let currentMovieObj = movies[i];
                     moviesSortedBySearch.push(currentMovieObj);
                 }
-        
+                let z = movieNames.indexOf(searchInput, y);
+            } else if (newMovieNames.lastIndexOf(newInput, 0) === 0) {
+
+                let currentMovieObj = movies[i];
+                moviesSortedBySearch.push(currentMovieObj);
+            }
+
         } else if (productionYear.lastIndexOf(searchInput, 0) === 0) {
             let currentMovieObj = movies[i];
             moviesSortedBySearch.push(currentMovieObj);
-        }
-        else if (movieGenres.lastIndexOf(searchInput, 0) === 0) {
+        } else if (movieGenres.lastIndexOf(searchInput, 0) === 0) {
             let currentMovieObj = movies[i];
             moviesSortedBySearch.push(currentMovieObj);
         }
@@ -489,10 +486,10 @@ function search(movies, movieCounter) {
         createMovieFlexBox();
         createMovies(moviesSortedBySearch, movieCounter);
         increaseCounterOnClick(movies);
-        document.getElementById("sortBtnDesc").addEventListener("click", function() {
+        document.getElementById("sortBtnDesc").addEventListener("click", function () {
             sortMoviesByLikesDesc(movieCounter, moviesSortedBySearch)
         });
-        document.getElementById("sortBtnAsc").addEventListener("click", function() {
+        document.getElementById("sortBtnAsc").addEventListener("click", function () {
             sortMoviesByLikesAsc(movieCounter, moviesSortedBySearch)
         });
     }
