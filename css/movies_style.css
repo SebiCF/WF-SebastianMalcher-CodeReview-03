@@ -1,0 +1,328 @@
+body {
+  /*sets font family, no margin to fit correctly*/
+  font-family: 'PT Sans Narrow', sans-serif;
+  margin: 0px;
+  background-color: #191919;
+  word-spacing: -1px; }
+  body img:hover {
+    cursor: pointer; }
+
+#mainSite {
+  /* creates side bars*/
+  max-width: 1100px;
+  margin: 0 auto;
+  background-image: linear-gradient(-144deg, #ded9d9f5, #3e3e3e, #ded9d9f5, #3e3e3e, #ded9d9f5, #3e3e3e, #ded9d9f5, #3e3e3e);
+  color: #DEDEDE; }
+
+/* header settings*/
+header {
+  background-color: #0d0d0d; }
+  header h1 {
+    text-align: center;
+    font-size: 3.2em;
+    padding: 3%;
+    margin: 0; }
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #151414; }
+nav li {
+  float: left; }
+nav li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 1.5em; }
+nav li a:hover {
+  background-color: #191919;
+  cursor: pointer; }
+
+main #contentHeader {
+  position: relative;
+  text-align: center;
+  font-size: 110%; }
+main h2 {
+  padding: 2%;
+  margin: 0;
+  margin-bottom: -2%;
+  display: inline-block;
+  font-size: 280%;
+  color: black; }
+main span {
+  /* adjusts sortBtn div*/
+  position: absolute;
+  right: 5%;
+  top: 48%;
+  font-size: 125%;
+  color: black; }
+main #sortBtnDesc {
+  right: 10%;
+  cursor: pointer; }
+main #sortBtnAsc {
+  right: 9%;
+  cursor: pointer; }
+main #sortBtnDesc:hover {
+  color: gray;
+  border-radius: 1px solid black;
+  cursor: pointer; }
+main #sortBtnAsc:hover {
+  color: gray;
+  border-radius: 1px solid black;
+  cursor: pointer; }
+main #homeFlex .likebutton:hover {
+  opacity: 0.5;
+  cursor: pointer; }
+main #homeFlex div[id^=movieTitel] {
+  display: none;
+  cursor: pointer; }
+main #homeFlex div:hover > div[id^=movieTitel] {
+  display: inline;
+  left: 8%;
+  width: 82%;
+  background-color: rgba(13, 13, 13, 0.9); }
+main #homeFlex div[id^=movieTitel]:hover {
+  transform: skew(-10deg); }
+main #homeFlex div {
+  width: 24%;
+  margin-top: 2%; }
+  main #homeFlex div div[class^=likeDiv] {
+    width: 31%;
+    top: 10%;
+    bottom: 76%;
+    left: 56%;
+    background-color: rgba(1, 1, 1, 0.4);
+    color: forestgreen;
+    font-weight: 600;
+    border-radius: 20%;
+    display: none; }
+    main #homeFlex div div[class^=likeDiv] img {
+      width: 40%;
+      padding-top: 12%;
+      height: 64%; }
+  main #homeFlex div div[id^=likeAmount] {
+    width: 30%;
+    margin-left: 45%;
+    background-color: green;
+    color: white;
+    font-weight: bold;
+    border-radius: 50%;
+    text-align: center;
+    padding: 12% 11% 10% 12%;
+    bottom: 9%;
+    left: 0%; }
+  main #homeFlex div img {
+    float: none;
+    padding: 1%;
+    padding-top: 4%;
+    width: 96%;
+    height: 90%; }
+  main #homeFlex div img:hover {
+    opacity: 1; }
+  main #homeFlex div div {
+    float: none;
+    width: 82%;
+    position: absolute;
+    font-size: 123%;
+    background-color: rgba(1, 1, 1, 0.7);
+    bottom: 7%; }
+main #homeFlex div:hover > div[class^=likeDiv] {
+  display: inline; }
+main .flex {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-bottom: -4%; }
+  main .flex div {
+    /* adjusts div for each movie*/
+    padding: 2%;
+    margin-bottom: 6%;
+    width: 40%;
+    background-color: #0d0d0d;
+    line-height: 100%;
+    position: relative;
+    border-radius: 2%; }
+    main .flex div img {
+      /* movie poster*/
+      width: 53%;
+      float: left;
+      margin: 1%;
+      margin-right: 5%;
+      border-radius: 3%;
+      height: 97%; }
+    main .flex div img:hover {
+      opacity: 0.7; }
+    main .flex div .likebutton {
+      width: 13%;
+      margin: 0% 0% -1% 2%; }
+    main .flex div .likebutton:hover {
+      opacity: 0.5;
+      cursor: pointer; }
+    main .flex div div[class^=likediv] {
+      position: absolute;
+      bottom: 8%;
+      right: 2%;
+      margin: 0;
+      padding: 0;
+      font-size: 140%;
+      line-height: 100%;
+      color: green;
+      letter-spacing: 1px; }
+    main .flex div div[id^=likeAmount] {
+      float: right;
+      margin: -2% 30% 1% 0%;
+      font-size: 120%;
+      background-color: green;
+      color: white;
+      font-weight: bold;
+      border-radius: 50%;
+      text-align: center;
+      padding: 2% 3% 2% 3%;
+      width: 20%; }
+    main .flex div div {
+      /* adjusts description div*/
+      width: 39%;
+      padding: 1%;
+      margin-top: -1%;
+      font-size: 120%;
+      margin-bottom: 0;
+      float: right; }
+      main .flex div div h3 {
+        margin: 1%; }
+      main .flex div div img {
+        width: 7%;
+        float: none; }
+main #flexRandom {
+  display: flex;
+  justify-content: center;
+  margin-bottom: -5%; }
+main #randomMovieDiv {
+  /* adjusts div for each movie*/
+  padding: 2%;
+  margin-bottom: 9%;
+  width: 60%;
+  background-color: #0d0d0d;
+  line-height: 120%;
+  position: relative;
+  border-radius: 2%; }
+  main #randomMovieDiv img {
+    /* movie poster*/
+    width: 53%;
+    margin: 1%;
+    margin-right: 5%;
+    border-radius: 3%;
+    height: 97%; }
+  main #randomMovieDiv img:hover {
+    opacity: 0.7; }
+  main #randomMovieDiv .noHoverOnSingleMovie:hover {
+    opacity: 1;
+    cursor: default; }
+  main #randomMovieDiv .likebutton {
+    width: 13%;
+    margin: 0% 0% -1% 2%; }
+  main #randomMovieDiv .likebutton:hover {
+    opacity: 0.5;
+    cursor: pointer; }
+  main #randomMovieDiv div[class^=likediv] {
+    position: absolute;
+    bottom: 8%;
+    right: 2%;
+    margin: 0;
+    padding: 0;
+    font-size: 140%;
+    line-height: 100%;
+    color: green;
+    letter-spacing: 1px; }
+  main #randomMovieDiv div[id^=likeAmount] {
+    float: right;
+    margin: 0% 53% 1% 0%;
+    font-size: 120%;
+    background-color: green;
+    color: white;
+    font-weight: bold;
+    border-radius: 50%;
+    text-align: center;
+    padding: 2% 3% 2% 3%;
+    width: 20%; }
+  main #randomMovieDiv div {
+    /* adjusts description div*/
+    width: 39%;
+    padding: 1%;
+    margin-top: -1%;
+    font-size: 160%;
+    margin-bottom: 0;
+    float: right;
+    line-height: 110%;
+    letter-spacing: 1px;
+    word-spacing: 1px; }
+    main #randomMovieDiv div h3 {
+      margin: 1%;
+      width: 105%; }
+    main #randomMovieDiv div img {
+      width: 7%;
+      float: none; }
+main #featuredHeader {
+  position: relative;
+  text-align: center;
+  color: black; }
+  main #featuredHeader h2 {
+    padding: 2%;
+    margin: 0;
+    display: inline-block;
+    font-size: 310%;
+    font-style: italic; }
+main div[class^=moreMoviesBtnsDiv] {
+  display: flex;
+  justify-content: center;
+  color: black;
+  padding: 0% 2% 2% 1%;
+  font-size: 150%;
+  font-weight: bold; }
+  main div[class^=moreMoviesBtnsDiv] div[class^=nextMoviePageBtn] {
+    margin: 0% 0% 0% 1%;
+    text-decoration: underline; }
+  main div[class^=moreMoviesBtnsDiv] div[class^=nextMoviePageBtn]:hover {
+    cursor: pointer;
+    opacity: 0.5; }
+
+footer {
+  background-color: #0d0d0d; }
+  footer h1 {
+    text-align: center;
+    font-size: 2.5em;
+    padding: 4%;
+    margin: 0; }
+
+#searchInput {
+  display: block;
+  width: 30%;
+  padding: 10px 0 8px 11px;
+  font-family: "Arvo";
+  font-weight: 400;
+  background: rgba(0, 0, 0, 0.3);
+  border: none;
+  outline: none;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+  box-shadow: inset 0 -5px 45px rgba(100, 100, 100, 0.2), 0 1px 1px rgba(255, 255, 255, 0.2);
+  text-indent: 60px;
+  transition: all .3s ease-in-out;
+  position: relative;
+  font-size: 120%;
+  margin-top: 0.6%;
+  float: right;
+  margin-right: 1.5%;
+  background-image: linear-gradient(-144deg, #0d0d0d, #0d0d0d, #151414);
+  letter-spacing: 2px;
+  color: #ded9d9f5; }
+
+#searchInput:focus {
+  text-indent: 12px;
+  box-shadow: inset 0 -5px 45px rgba(100, 100, 100, 0.4), 0 1px 1px rgba(255, 255, 255, 0.2); }
+
+/*# sourceMappingURL=movies_style.css.map */
